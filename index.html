@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Scholarship Finder for Indian Students</title>
+  <title>VidyaSetu - Pan-India Scholarship Finder</title>
   <style>
     :root {
       --primary: #1e3a8a;
@@ -12,145 +12,204 @@
       --surface: #ffffff;
       --text: #0f172a;
       --muted: #475569;
-      --border: #e2e8f0;
-      --radius: 8px;
+      --border: #cbd5e1;
+      --radius: 10px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--background); color: var(--text); line-height: 1.5; }
     .container { max-width: 800px; margin: 0 auto; padding: 1rem; }
-    header { background: var(--primary); color: white; padding: 1.25rem 1rem; text-align: center; }
-    header h1 { font-size: 1.4rem; }
-    header p { font-size: 0.85rem; color: #cbd5e1; }
-    .banner { background: #f1f5f9; border-left: 4px solid var(--primary); padding: 0.75rem; margin: 1rem 0; font-size: 0.85rem; border-radius: 0 var(--radius) var(--radius) 0; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-    .card-title { font-size: 1.1rem; margin-bottom: 0.25rem; }
+    header { background: var(--primary); color: white; padding: 1.5rem 1rem; text-align: center; }
+    header h1 { font-size: 1.6rem; letter-spacing: -0.5px; }
+    header p { font-size: 0.9rem; color: #cbd5e1; margin-top: 4px; }
+    .banner { background: #f1f5f9; border-left: 4px solid var(--primary); padding: 0.85rem; margin: 1rem 0; font-size: 0.85rem; border-radius: 0 var(--radius) var(--radius) 0; }
+    .card { background: var(--surface); border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .card-title { font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 0.25rem; }
     .card-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
-    .form-group { margin-bottom: 0.85rem; display: flex; flex-direction: column; }
-    .form-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
-    input, select { padding: 0.6rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.95rem; }
-    .btn { background: var(--primary); color: white; border: none; padding: 0.75rem; font-weight: 600; border-radius: var(--radius); cursor: pointer; width: 100%; font-size: 1rem; }
+    .form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; color: #334155; }
+    input, select { padding: 0.65rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.95rem; background: #f8fafc; outline: none; }
+    input:focus, select:focus { border-color: var(--primary); background: #ffffff; }
+    .btn { background: var(--primary); color: white; border: none; padding: 0.8rem; font-weight: 600; border-radius: var(--radius); cursor: pointer; width: 100%; font-size: 1rem; }
     .btn-secondary { background: var(--secondary); margin-top: 0.5rem; }
-    .badge { font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.6rem; border-radius: 12px; display: inline-block; }
+    .badge { font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.6rem; border-radius: 9999px; display: inline-block; }
     .badge-likely { background: #ecfdf5; color: #065f46; border: 1px solid #10b981; }
     .badge-check { background: #fffbeb; color: #92400e; border: 1px solid #f59e0b; }
     .badge-nomatch { background: #fef2f2; color: #991b1b; border: 1px solid #ef4444; }
-    .details-box { background: #f8fafc; padding: 0.75rem; border-radius: var(--radius); font-size: 0.85rem; margin: 0.6rem 0; }
+    .details-box { background: #f8fafc; padding: 0.8rem; border-radius: var(--radius); font-size: 0.85rem; margin: 0.6rem 0; border: 1px solid #edf2f7; }
     .reasons { font-size: 0.85rem; list-style: none; margin: 0.5rem 0; }
     .reasons li { margin-bottom: 0.2rem; }
-    .btn-links { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
-    .btn-links a { flex: 1; text-align: center; text-decoration: none; padding: 0.5rem; border-radius: var(--radius); font-size: 0.85rem; font-weight: bold; }
+    .btn-links { display: flex; gap: 0.6rem; margin-top: 0.85rem; }
+    .btn-links a { flex: 1; text-align: center; text-decoration: none; padding: 0.55rem; border-radius: var(--radius); font-size: 0.85rem; font-weight: bold; }
     .btn-apply { background: var(--primary); color: white; }
-    .btn-info { background: #e2e8f0; color: var(--text); }
+    .btn-info { background: #f1f5f9; color: var(--text); border: 1px solid #cbd5e1; }
   </style>
 </head>
 <body>
 
   <header>
     <h1>VidyaSetu</h1>
-    <p>Free Scholarship Finder for Indian Students</p>
+    <p>Free, Direct &amp; Verified Pan-India Scholarship Finder</p>
   </header>
 
   <main class="container">
     <div class="banner">
-      <strong>Zero-Cost & Private:</strong> We do not ask for any personal ID numbers, bank details, or passwords.
+      <strong>Zero-Cost &amp; Private:</strong> We do not ask for Aadhaar, bank details, or passwords. All links direct straight to official portals.
     </div>
 
     <!-- AI Quick Fill -->
     <div class="card">
-      <label style="font-weight: 600; font-size: 0.9rem;">Auto-Fill by Describing Yourself:</label>
-      <input type="text" id="aiInput" placeholder="e.g. 1st year B.Tech Karnataka, OBC, income 1.8 lakh, 80%" style="margin: 0.5rem 0; width: 100%;">
+      <label style="font-weight: 600; font-size: 0.9rem; color:#1e293b;">Auto-Fill by Describing Yourself:</label>
+      <input type="text" id="aiInput" placeholder="e.g. 1st year B.Tech Karnataka, OBC, income 2 lakh, 80%" style="margin: 0.5rem 0; width: 100%;">
       <button type="button" class="btn btn-secondary" onclick="quickFill()">Auto-Fill Details</button>
     </div>
 
-    <!-- Form -->
-    <form id="profileForm" class="card" onsubmit="handleFind(event)">
-      <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Your Education Details</h3>
+    <!-- Step-by-Step Progressive Form -->
+    <div class="card">
+      <h3 style="margin-bottom: 1.2rem; font-size: 1.15rem; color: #1e293b;">Find Verified Scholarships</h3>
 
-      <div class="form-group">
-        <label>Education Level</label>
-        <select id="edu">
-          <option value="">-- Select --</option>
-          <option value="Class 10">Class 10</option>
-          <option value="Class 12">Class 12 / Intermediate</option>
-          <option value="Diploma">Diploma / Polytechnic</option>
-          <option value="Undergraduate">Undergraduate (B.Tech, B.Com, BA, B.Sc, MBBS)</option>
-          <option value="Postgraduate">Postgraduate</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Course</label>
-        <select id="course">
-          <option value="">-- Select --</option>
-          <option value="B.Tech">B.Tech / B.E.</option>
-          <option value="BCA">BCA</option>
-          <option value="B.Com">B.Com</option>
-          <option value="BA">BA</option>
-          <option value="B.Sc">B.Sc</option>
-          <option value="MBBS">MBBS</option>
-          <option value="Diploma courses">Diploma Courses</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>State</label>
-        <select id="state">
-          <option value="">-- Select --</option>
+      <!-- Step 1: State -->
+      <div class="form-group" id="step-state">
+        <label>1. Select Your State / Domicile</label>
+        <select id="stateSelect">
+          <option value="">-- Select State --</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Telangana">Telangana</option>
           <option value="Karnataka">Karnataka</option>
           <option value="Maharashtra">Maharashtra</option>
-          <option value="Tamil Nadu">Tamil Nadu</option>
           <option value="Uttar Pradesh">Uttar Pradesh</option>
-          <option value="Delhi">Delhi</option>
+          <option value="West Bengal">West Bengal</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
           <option value="Bihar">Bihar</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Delhi">Delhi</option>
           <option value="Rajasthan">Rajasthan</option>
-          <option value="Other">Other State</option>
+          <option value="Other">Other States / Central</option>
         </select>
       </div>
 
-      <div class="form-group">
-        <label>Category</label>
-        <select id="category">
-          <option value="">-- Select --</option>
-          <option value="General">General</option>
-          <option value="OBC">OBC</option>
-          <option value="SC">SC</option>
-          <option value="ST">ST</option>
-          <option value="EWS">EWS</option>
-          <option value="Minority">Minority</option>
+      <!-- Step 2: Education Level (Unlocks after State) -->
+      <div class="form-group" id="step-edu" style="display: none;">
+        <label>2. Current Education Level</label>
+        <select id="eduSelect">
+          <option value="">-- Select Education Level --</option>
+          <option value="Class 10">Class 10 or Below</option>
+          <option value="Class 11">Class 11 (Intermediate / PUC 1st Year)</option>
+          <option value="Class 12">Class 12 (Intermediate / PUC 2nd Year)</option>
+          <option value="Diploma">Diploma / Polytechnic</option>
+          <option value="Undergraduate">Undergraduate (College / Degree)</option>
+          <option value="Postgraduate">Postgraduate (Master's / Ph.D.)</option>
         </select>
       </div>
 
-      <div class="form-group">
-        <label>Annual Family Income (₹)</label>
-        <input type="number" id="income" placeholder="e.g. 200000">
-      </div>
-
-      <div class="form-group">
-        <label>Score / Percentage (%)</label>
-        <input type="number" id="marks" step="0.1" placeholder="e.g. 78">
-      </div>
-
-      <div class="form-group">
-        <label>Gender</label>
-        <select id="gender">
-          <option value="">-- Select --</option>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-          <option value="Other">Other</option>
+      <!-- Step 3: Course Stream (For College & Diploma) -->
+      <div class="form-group" id="step-course" style="display: none;">
+        <label>3. Degree / Course Stream</label>
+        <select id="courseSelect">
+          <option value="ALL">-- Any / General Stream --</option>
+          <option value="B.Tech">Engineering (B.Tech / B.E.)</option>
+          <option value="MBBS">Medical / Healthcare (MBBS, BDS, Pharma, Nursing)</option>
+          <option value="BCA">Computer Science / IT (BCA, B.Sc CS)</option>
+          <option value="B.Com">Commerce / Business (B.Com, BBA)</option>
+          <option value="B.Sc">Sciences (B.Sc)</option>
+          <option value="BA">Humanities / Arts (BA)</option>
+          <option value="Diploma courses">Diploma Courses</option>
+          <option value="Other">Other Disciplines</option>
         </select>
       </div>
 
-      <div class="form-group" style="flex-direction: row; align-items: center; gap: 0.5rem;">
-        <input type="checkbox" id="pwd" style="width: auto;">
-        <label for="pwd" style="margin: 0;">Person with Disability (PwD &ge; 40%)</label>
+      <!-- Step 4: Year of Study -->
+      <div class="form-group" id="step-year" style="display: none;">
+        <label>4. Year of Study</label>
+        <select id="yearSelect">
+          <option value="ALL">-- Any Year --</option>
+          <option value="1">1st Year (Fresh Admission)</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
       </div>
 
-      <button type="submit" class="btn">Find Scholarships</button>
-    </form>
+      <!-- Step 5: Admission Quota -->
+      <div class="form-group" id="step-quota" style="display: none;">
+        <label>5. Admission Seat Quota</label>
+        <select id="quotaSelect">
+          <option value="Govt/Merit">Government / Merit / Counselling Quota</option>
+          <option value="Management">Management / Private Quota</option>
+        </select>
+        <span style="font-size: 0.75rem; color: #64748b; margin-top: 3px;">Note: State government fee reimbursements usually require Merit/Govt seat allotment.</span>
+      </div>
 
-    <!-- Results -->
+      <!-- Step 6: Eligibility Profile (Category, Income, Marks, Gender) -->
+      <div id="step-profile" style="display: none;">
+        <div class="form-group">
+          <label>6. Caste / Reservation Category</label>
+          <select id="catSelect">
+            <option value="General">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="EWS">EWS</option>
+            <option value="Minority">Minority</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>7. Annual Family Income (₹)</label>
+          <input type="number" id="incomeInput" placeholder="e.g. 200000">
+        </div>
+
+        <div class="form-group">
+          <label>8. Previous Academic Marks / Percentage (%)</label>
+          <input type="number" id="marksInput" step="0.1" placeholder="e.g. 78">
+        </div>
+
+        <div class="form-group">
+          <label>9. Gender</label>
+          <select id="genderSelect">
+            <option value="ALL">-- Any / Prefer not to say --</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="flex-direction: row; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+          <input type="checkbox" id="pwdCheck" style="width: auto;">
+          <label for="pwdCheck" style="margin: 0;">Person with Disability (PwD &ge; 40%)</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Section -->
     <div id="results"></div>
+
+    <!-- VidyaSetu Trust & Community Proof Section -->
+    <div style="max-width: 580px; margin: 35px auto 25px auto; padding: 22px 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px;">
+        <span style="display: inline-block; width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);"></span>
+        <span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: #0f766e;">Verified Community Portal</span>
+      </div>
+
+      <h3 style="margin: 0 0 10px 0; font-size: 18px; font-weight: 700; color: #1e293b;">Empowering Indian Students Nationwide</h3>
+      <p style="margin: 0 0 18px 0; font-size: 13px; color: #64748b; line-height: 1.5;">
+        Zero fees, zero phishing. Direct access to official central, state, and corporate CSR scholarship portals.
+      </p>
+
+      <!-- Visitor Metric Pill -->
+      <div style="display: inline-flex; align-items: center; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 6px 14px; margin-bottom: 18px;">
+        <span style="font-size: 13px; color: #334155; font-weight: 600; margin-right: 8px;">Total Visitors Guided:</span>
+        <img src="https://hits.sh/bhuvan0606.github.io/scholarships.svg?style=flat&label=&extraCount=0&color=1d4ed8" alt="Visitors Count" style="vertical-align: middle;" />
+      </div>
+
+      <!-- Trust Badges Row -->
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; border-top: 1px solid #f1f5f9; padding-top: 14px;">
+        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #475569; font-weight: 500;">
+          <span style="color: #16a34a; font-size: 14px;">✓</span> 100% Free Access
+        </div>
+        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #2563eb; font-size: 14px;">🛡️ Direct Official Portals</div>
+        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #0284c7; font-size: 14px;">🔒 No Login / Data Trackers</div>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -158,7 +217,7 @@
       {
         id: "1",
         name: "Post Matric Scholarships Scheme for SC Students",
-        provider: "Govt. of India",
+        provider: "Govt. of India (Ministry of Social Justice)",
         edu: ["Class 11", "Class 12", "Diploma", "Undergraduate", "Postgraduate"],
         courses: ["ALL"],
         states: ["ALL"],
@@ -174,7 +233,7 @@
       {
         id: "2",
         name: "Central Sector Scheme for College/University Students (PM-USP)",
-        provider: "Ministry of Education",
+        provider: "Department of Higher Education (Govt. of India)",
         edu: ["Undergraduate", "Postgraduate"],
         courses: ["B.Tech", "BCA", "B.Com", "BA", "B.Sc", "MBBS", "Other"],
         states: ["ALL"],
@@ -183,14 +242,14 @@
         marks: 80,
         gender: "ALL",
         pwd: false,
-        amount: "₹12,000 to ₹20,000 per year",
+        amount: "₹12,000/yr for UG, ₹20,000/yr for PG",
         applyUrl: "https://scholarships.gov.in/",
         infoUrl: "https://www.education.gov.in/"
       },
       {
         id: "3",
         name: "AICTE Pragati Scholarship for Girl Students",
-        provider: "AICTE",
+        provider: "AICTE (Govt. of India)",
         edu: ["Diploma", "Undergraduate"],
         courses: ["B.Tech", "Diploma courses"],
         states: ["ALL"],
@@ -206,7 +265,7 @@
       {
         id: "4",
         name: "Karnataka Post-Matric SSP Scholarship",
-        provider: "Govt of Karnataka",
+        provider: "Govt. of Karnataka (Social Welfare Dept)",
         edu: ["Diploma", "Undergraduate", "Postgraduate"],
         courses: ["ALL"],
         states: ["Karnataka"],
@@ -215,14 +274,14 @@
         marks: 40,
         gender: "ALL",
         pwd: false,
-        amount: "Tuition reimbursement + maintenance",
+        amount: "Tuition reimbursement + monthly maintenance",
         applyUrl: "https://ssp.postmatric.karnataka.gov.in/",
-        infoUrl: "https://ssp.postmatric.karnataka.gov.in/"
+        infoUrl: "https://ssp.karnataka.gov.in/"
       },
       {
         id: "5",
         name: "Post-Matric Scholarship for Students with Disabilities",
-        provider: "DEPwD, Govt of India",
+        provider: "DEPwD, Govt. of India",
         edu: ["Class 11", "Class 12", "Diploma", "Undergraduate", "Postgraduate"],
         courses: ["ALL"],
         states: ["ALL"],
@@ -251,7 +310,7 @@
         applyUrl: "https://www.scholarships.reliancefoundation.org/",
         infoUrl: "https://www.reliancefoundation.org/"
       },
-            {
+      {
         id: "7",
         name: "Prime Minister's Scholarship Scheme (PMSS)",
         provider: "Welfare and Rehabilitation Board (WARB)",
@@ -266,15 +325,15 @@
         amount: "₹30,000/year for boys, ₹36,000/year for girls",
         applyUrl: "https://scholarships.gov.in/",
         infoUrl: "https://www.desw.gov.in/"
-            },
-            {
+      },
+      {
         id: "8",
-        name: "Karnataka Post-Matric SSP Scholarship",
-        provider: "Govt. of Karnataka (Social/Backward Welfare)",
+        name: "Karnataka Backward Classes SSP Scheme",
+        provider: "Govt. of Karnataka (Backward Classes Welfare)",
         edu: ["Diploma", "Undergraduate", "Postgraduate"],
         courses: ["B.Tech", "MBBS", "BCA", "B.Sc", "Other"],
         states: ["Karnataka"],
-        cats: ["General", "OBC", "SC", "ST", "EWS"],
+        cats: ["General", "OBC", "EWS"],
         income: 250000,
         marks: 50,
         gender: "ALL",
@@ -296,7 +355,7 @@
         gender: "ALL",
         pwd: false,
         amount: "Up to ₹75,000 per year",
-        applyUrl: "https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme",
+        applyUrl: "https://www.hdfcbank.com/",
         infoUrl: "https://v.hdfc.bank.in/csr/initiatives/education.html"
       },
       {
@@ -337,7 +396,7 @@
         provider: "Wipro Consumer Care & Wipro Cares",
         edu: ["Undergraduate"],
         courses: ["B.Tech", "B.Sc", "BCA", "Other"],
-        states: ["Karnataka", "Other"],
+        states: ["Karnataka", "Andhra Pradesh", "Telangana", "Other"],
         cats: ["General", "OBC", "SC", "ST", "EWS"],
         income: 400000,
         marks: 60,
@@ -379,7 +438,7 @@
         applyUrl: "https://www.infosys.com/infosys-foundation/",
         infoUrl: "https://www.infosys.com/infosys-foundation/initiatives/education/stem-stars.html"
       },
-            {
+      {
         id: "15",
         name: "SBIF Asha Scholarship Program",
         provider: "SBI Foundation (State Bank of India)",
@@ -603,159 +662,256 @@
         applyUrl: "https://egrantz.kerala.gov.in/",
         infoUrl: "https://egrantz.kerala.gov.in/"
       }
-      
     ];
 
-    function quickFill() {
-      const text = document.getElementById('aiInput').value.toLowerCase();
-      if (text.includes("b.tech") || text.includes("engineering")) {
-        document.getElementById('edu').value = "Undergraduate";
-        document.getElementById('course').value = "B.Tech";
+    // Progressive Step Flow Controller
+    function handleStepFlow() {
+      const stateVal = document.getElementById('stateSelect').value;
+      const eduVal = document.getElementById('eduSelect').value;
+
+      const stepEdu = document.getElementById('step-edu');
+      const stepCourse = document.getElementById('step-course');
+      const stepYear = document.getElementById('step-year');
+      const stepQuota = document.getElementById('step-quota');
+      const stepProfile = document.getElementById('step-profile');
+
+      if (stateVal !== "") {
+        stepEdu.style.display = "block";
+      } else {
+        stepEdu.style.display = "none";
+        stepCourse.style.display = "none";
+        stepYear.style.display = "none";
+        stepQuota.style.display = "none";
+        stepProfile.style.display = "none";
+        evaluate();
+        return;
       }
-      if (text.includes("karnataka")) document.getElementById('state').value = "Karnataka";
-      if (text.includes("obc")) document.getElementById('category').value = "OBC";
-      if (text.includes("sc")) document.getElementById('category').value = "SC";
-      if (text.includes("girl") || text.includes("female")) document.getElementById('gender').value = "Female";
 
-      const incMatch = text.match(/(\d+(\.\d+)?)\s*(lakh|l)/);
-      if (incMatch) document.getElementById('income').value = parseFloat(incMatch[1]) * 100000;
-
-      const marksMatch = text.match(/(\d{2})%/);
-      if (marksMatch) document.getElementById('marks').value = parseFloat(marksMatch[1]);
+      if (eduVal === "Class 10") {
+        stepCourse.style.display = "none";
+        stepYear.style.display = "none";
+        stepQuota.style.display = "none";
+        stepProfile.style.display = "block";
+      } else if (eduVal !== "") {
+        stepCourse.style.display = "block";
+        stepYear.style.display = "block";
+        stepQuota.style.display = "block";
+        stepProfile.style.display = "block";
+      } else {
+        stepCourse.style.display = "none";
+        stepYear.style.display = "none";
+        stepQuota.style.display = "none";
+        stepProfile.style.display = "none";
+      }
 
       evaluate();
     }
 
-    function handleFind(e) {
-      e.preventDefault();
-      evaluate();
-    }
-
+    // Matching Algorithm
     function evaluate() {
-      const profile = {
-        edu: document.getElementById('edu').value,
-        course: document.getElementById('course').value,
-        state: document.getElementById('state').value,
-        cat: document.getElementById('category').value,
-        income: parseFloat(document.getElementById('income').value) || null,
-        marks: parseFloat(document.getElementById('marks').value) || null,
-        gender: document.getElementById('gender').value,
-        pwd: document.getElementById('pwd').checked
-      };
+      const state = document.getElementById('stateSelect').value;
+      const edu = document.getElementById('eduSelect').value;
+      const course = document.getElementById('courseSelect').value;
+      const quota = document.getElementById('quotaSelect').value;
+      const cat = document.getElementById('catSelect').value;
+      const income = parseFloat(document.getElementById('incomeInput').value) || 0;
+      const marks = parseFloat(document.getElementById('marksInput').value) || 0;
+      const gender = document.getElementById('genderSelect').value;
+      const pwd = document.getElementById('pwdCheck').checked;
 
-      const out = document.getElementById('results');
-      let html = '<h3 style="margin: 1.5rem 0 0.75rem;">Matching Scholarships</h3>';
+      const resultsDiv = document.getElementById('results');
+
+      if (!state || !edu) {
+        resultsDiv.innerHTML = '<div style="text-align:center; padding: 2rem; color: #64748b;">Please select your state and education level above to view matched scholarships.</div>';
+        return;
+      }
+
+      let matches = [];
 
       scholarships.forEach(s => {
-        const ok = [];
-        const no = [];
+        let reasons = [];
+        let score = 100;
 
-        if (profile.edu && !s.edu.includes("ALL")) {
-          s.edu.includes(profile.edu) ? ok.push("Matches your education level") : no.push("Requires " + s.edu.join(", "));
-        }
-        if (profile.course && !s.courses.includes("ALL")) {
-          s.courses.includes(profile.course) ? ok.push("Matches course") : no.push("Course restricted");
-        }
-        if (profile.state && !s.states.includes("ALL")) {
-          s.states.includes(profile.state) ? ok.push("Valid for " + profile.state) : no.push("State restricted");
-        }
-        if (profile.cat && !s.cats.includes("ALL")) {
-          s.cats.includes(profile.cat) ? ok.push("Applies to " + profile.cat) : no.push("Requires " + s.cats.join(", "));
-        }
-        if (profile.income && s.income) {
-          profile.income <= s.income ? ok.push("Income within ₹" + s.income.toLocaleString('en-IN')) : no.push("Income exceeds ceiling");
-        }
-        if (profile.marks && s.marks) {
-          profile.marks >= s.marks ? ok.push("Marks satisfy " + s.marks + "% cutoff") : no.push("Requires min " + s.marks + "%");
-        }
-        if (s.gender !== "ALL") {
-          profile.gender === s.gender ? ok.push("Matches gender criteria") : (profile.gender ? no.push("Reserved for " + s.gender) : null);
-        }
-        if (s.pwd && !profile.pwd) {
-          no.push("Reserved for PwD candidates");
+        // 1. Quota Check: Management seats are excluded from govt welfare schemes
+        if (quota === "Management" && (s.provider.includes("Govt") || s.provider.includes("Ministry") || s.provider.includes("Department"))) {
+          score -= 70;
+          reasons.push("❌ Government schemes typically require merit / counselling quota seat allotment.");
         }
 
-        let badge = '<span class="badge badge-likely">🟢 Likely Eligible</span>';
-        if (no.length > 0) {
-          badge = '<span class="badge badge-nomatch">🔴 Does Not Match</span>';
-        } else if (ok.length === 0) {
-          badge = '<span class="badge badge-check">🟡 Check Eligibility</span>';
+        // 2. Education level check
+        if (!s.edu.includes(edu) && !s.edu.includes("ALL")) {
+          score -= 50;
+          reasons.push(`❌ Targets ${s.edu.join(', ')} (You selected ${edu})`);
+        } else {
+          reasons.push(`✓ Matches education level (${edu})`);
+        }
+
+        // 3. Course check
+        if (course && course !== "ALL" && !s.courses.includes(course) && !s.courses.includes("ALL")) {
+          score -= 30;
+          reasons.push(`❌ Specific to ${s.courses.join(', ')}`);
+        } else {
+          reasons.push(`✓ Open to your stream`);
+        }
+
+        // 4. State check
+        if (!s.states.includes(state) && !s.states.includes("ALL")) {
+          score -= 50;
+          reasons.push(`❌ Domicile required: ${s.states.join(', ')}`);
+        } else {
+          reasons.push(`✓ Available in your state (${state})`);
+        }
+
+        // 5. Category check
+        if (!s.cats.includes(cat) && !s.cats.includes("General")) {
+          score -= 40;
+          reasons.push(`❌ Reserved for ${s.cats.join(', ')}`);
+        } else {
+          reasons.push(`✓ Category eligible (${cat})`);
+        }
+
+        // 6. Income check
+        if (income > 0 && income > s.income) {
+          score -= 40;
+          reasons.push(`❌ Max income limit is ₹${s.income.toLocaleString('en-IN')}`);
+        } else if (income > 0) {
+          reasons.push(`✓ Within family income limit (₹${s.income.toLocaleString('en-IN')})`);
+        }
+
+        // 7. Marks check
+        if (marks > 0 && marks < s.marks) {
+          score -= 30;
+          reasons.push(`❌ Minimum required percentage is ${s.marks}%`);
+        } else if (marks > 0 && s.marks > 0) {
+          reasons.push(`✓ Percentage meets minimum ${s.marks}% criterion`);
+        }
+
+        // 8. Gender check
+        if (s.gender !== "ALL" && s.gender !== gender) {
+          score -= 60;
+          reasons.push(`❌ Exclusive to ${s.gender} applicants`);
+        }
+
+        // 9. PwD check
+        if (s.pwd && !pwd) {
+          score -= 60;
+          reasons.push(`❌ Requires PwD (>= 40%) certificate`);
+        }
+
+        matches.push({ scholarship: s, score: Math.max(0, score), reasons });
+      });
+
+      // Sort: Highest match score first
+      matches.sort((a, b) => b.score - a.score);
+
+      // Render Cards
+      let html = `<h2 style="margin: 1.5rem 0 1rem 0; font-size: 1.25rem; color: #1e293b;">Matched Opportunities (${matches.filter(m => m.score >= 70).length} High Match)</h2>`;
+
+      matches.forEach(m => {
+        let badgeClass = "badge-nomatch";
+        let badgeText = "Low Match / Needs Verification";
+
+        if (m.score >= 80) {
+          badgeClass = "badge-likely";
+          badgeText = "High Match (Likely Eligible)";
+        } else if (m.score >= 50) {
+          badgeClass = "badge-check";
+          badgeText = "Partial Match (Check Criteria)";
         }
 
         html += `
-          <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-              <div>
-                <div class="card-title">${s.name}</div>
-                <div class="card-meta">${s.provider}</div>
-              </div>
-              ${badge}
+          <div class="card" style="border-left: 4px solid ${m.score >= 80 ? '#10b981' : (m.score >= 50 ? '#f59e0b' : '#ef4444')};">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 0.4rem;">
+              <h3 class="card-title">${m.scholarship.name}</h3>
+              <span class="badge ${badgeClass}">${badgeText}</span>
             </div>
+            <div class="card-meta">Provided by <strong>${m.scholarship.provider}</strong></div>
+            
             <div class="details-box">
-              <div><strong>Benefit:</strong> ${s.amount}</div>
-              <div><strong>Income Limit:</strong> ₹${s.income.toLocaleString('en-IN')}</div>
+              <strong>Grant / Award:</strong> ${m.scholarship.amount}
             </div>
+
             <ul class="reasons">
-              ${ok.map(r => `<li style="color:#065f46;">✓ ${r}</li>`).join('')}
-              ${no.map(d => `<li style="color:#991b1b;">✕ ${d}</li>`).join('')}
+              ${m.reasons.map(r => `<li>${r}</li>`).join('')}
             </ul>
+
             <div class="btn-links">
-              <a href="${s.infoUrl}" target="_blank" class="btn-info">Official Info</a>
-              <a href="${s.applyUrl}" target="_blank" class="btn-apply">Official Portal ↗</a>
+              <a href="${m.scholarship.applyUrl}" target="_blank" rel="noopener" class="btn-apply">Official Portal ↗</a>
+              <a href="${m.scholarship.infoUrl}" target="_blank" rel="noopener" class="btn-info">Guidelines</a>
             </div>
           </div>
         `;
       });
 
-      out.innerHTML = html;
-      out.scrollIntoView({ behavior: 'smooth' });
+      resultsDiv.innerHTML = html;
     }
 
-    // Run automatically once on load
-    evaluate();
+    // Natural Language Auto-Fill
+    function quickFill() {
+      const text = document.getElementById('aiInput').value.toLowerCase();
+      if (!text) return;
+
+      if (text.includes("karnataka")) document.getElementById('stateSelect').value = "Karnataka";
+      else if (text.includes("andhra") || text.includes("ap")) document.getElementById('stateSelect').value = "Andhra Pradesh";
+      else if (text.includes("telangana") || text.includes("ts")) document.getElementById('stateSelect').value = "Telangana";
+      else if (text.includes("maharashtra")) document.getElementById('stateSelect').value = "Maharashtra";
+      else if (text.includes("tamil nadu") || text.includes("tamilnadu")) document.getElementById('stateSelect').value = "Tamil Nadu";
+      else if (text.includes("up") || text.includes("uttar pradesh")) document.getElementById('stateSelect').value = "Uttar Pradesh";
+      else if (text.includes("bengal")) document.getElementById('stateSelect').value = "West Bengal";
+      else if (text.includes("bihar")) document.getElementById('stateSelect').value = "Bihar";
+      else if (text.includes("kerala")) document.getElementById('stateSelect').value = "Kerala";
+
+      if (text.includes("b.tech") || text.includes("engineering") || text.includes("be")) {
+        document.getElementById('eduSelect').value = "Undergraduate";
+        document.getElementById('courseSelect').value = "B.Tech";
+      } else if (text.includes("mbbs") || text.includes("medical")) {
+        document.getElementById('eduSelect').value = "Undergraduate";
+        document.getElementById('courseSelect').value = "MBBS";
+      } else if (text.includes("diploma") || text.includes("polytechnic")) {
+        document.getElementById('eduSelect').value = "Diploma";
+      } else if (text.includes("10th") || text.includes("class 10")) {
+        document.getElementById('eduSelect').value = "Class 10";
+      }
+
+      if (text.includes("1st year") || text.includes("first year")) document.getElementById('yearSelect').value = "1";
+      if (text.includes("2nd year") || text.includes("second year")) document.getElementById('yearSelect').value = "2";
+
+      if (text.includes("sc")) document.getElementById('catSelect').value = "SC";
+      else if (text.includes("st")) document.getElementById('catSelect').value = "ST";
+      else if (text.includes("obc")) document.getElementById('catSelect').value = "OBC";
+      else if (text.includes("ews")) document.getElementById('catSelect').value = "EWS";
+
+      if (text.includes("girl") || text.includes("female") || text.includes("woman")) {
+        document.getElementById('genderSelect').value = "Female";
+      }
+
+      const incMatch = text.match(/(\d+(\.\d+)?)\s*(lakh|lakhs|l)/i);
+      if (incMatch) {
+        document.getElementById('incomeInput').value = parseFloat(incMatch[1]) * 100000;
+      }
+
+      const marksMatch = text.match(/(\d+(\.\d+)?)\s*%/);
+      if (marksMatch) {
+        document.getElementById('marksInput').value = marksMatch[1];
+      }
+
+      handleStepFlow();
+    }
+
+    // Event Bindings
+    document.getElementById('stateSelect').addEventListener('change', handleStepFlow);
+    document.getElementById('eduSelect').addEventListener('change', handleStepFlow);
+    document.getElementById('courseSelect').addEventListener('change', evaluate);
+    document.getElementById('yearSelect').addEventListener('change', evaluate);
+    document.getElementById('quotaSelect').addEventListener('change', evaluate);
+    document.getElementById('catSelect').addEventListener('change', evaluate);
+    document.getElementById('genderSelect').addEventListener('change', evaluate);
+    document.getElementById('incomeInput').addEventListener('input', evaluate);
+    document.getElementById('marksInput').addEventListener('input', evaluate);
+    document.getElementById('pwdCheck').addEventListener('change', evaluate);
+
+    // Initial check
+    handleStepFlow();
   </script>
-      evaluate();
-  </script>
-
-  <!-- VidyaSetu Trust & Community Proof Section -->
-  <div style="max-width: 580px; margin: 35px auto 25px auto; padding: 22px 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center;">
-    
-    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px;">
-      <span style="display: inline-block; width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);"></span>
-      <span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: #0f766e;">Verified Community Portal</span>
-    </div>
-
-    <h3 style="margin: 0 0 10px 0; font-size: 18px; font-weight: 700; color: #1e293b;">
-      Empowering Indian Students Nationwide
-    </h3>
-
-    <p style="margin: 0 0 18px 0; font-size: 13px; color: #64748b; line-height: 1.5;">
-      Zero fees, zero phishing. Direct access to official central, state, and premier CSR scholarship schemes.
-    </p>
-
-    <!-- Visitor Metric Pill -->
-    <div style="display: inline-flex; align-items: center; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 9999px; padding: 6px 14px; margin-bottom: 18px;">
-      <span style="font-size: 13px; color: #334155; font-weight: 600; margin-right: 8px;">Students Guided:</span>
-      <img src="https://hits.sh/bhuvan0606.github.io/scholarships.svg?style=flat&label=&extraCount=0&color=1d4ed8" alt="Visitors Count" style="vertical-align: middle;" />
-    </div>
-
-    <!-- Trust Badges Row -->
-    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; border-top: 1px solid #f1f5f9; padding-top: 14px;">
-      <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #475569; font-weight: 500;">
-        <span style="color: #16a34a; font-size: 14px;">✓</span> 100% Free Access
-      </div>
-      <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #475569; font-weight: 500;">
-        <span style="color: #2563eb; font-size: 14px;">🛡️</span> Direct Official Portals
-      </div>
-      <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #475569; font-weight: 500;">
-        <span style="color: #0284c7; font-size: 14px;">🔒</span> No Login / Data Trackers
-      </div>
-    </div>
-
-  </div>
-
-</body>
-</html>
-
 </body>
 </html>
